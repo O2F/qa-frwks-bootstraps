@@ -1,0 +1,36 @@
+package org.o2f.test;
+
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.o2f.configuration.BaseConfigModel;
+import org.o2f.configuration.DriverFactory;
+import org.openqa.selenium.WebDriver;
+
+import java.util.Locale;
+
+@Slf4j
+public class TestBaseLifeCycle {
+
+    public static BaseConfigModel config;
+
+    public static WebDriver driver;
+
+    @BeforeAll
+    public static void baseSetup() {
+
+        //Unwrap config from the BaseTestConfig
+        config = BaseTestConfig.getTestConfig();
+
+        log.info(String.format("Using the Base URL: %s", config.getBaseUrl()));
+        log.info(String.format("Using the Browser URL: %s", config.getBrowser().toUpperCase(Locale.ROOT)));
+
+        driver = new DriverFactory(config.getBrowser()).getDriver();
+    }
+
+    @AfterAll
+    public static void tearDown() {
+        driver.quit();
+    }
+
+}

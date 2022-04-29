@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.o2f</groupId>
     <artifactId>selenium_junit5_simple</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>5.0.9</version>
+            <version>${extended.reports.version}</version>
         </dependency>
 
     </dependencies>
@@ -101,6 +101,7 @@
         <lombok.version>1.18.24</lombok.version>
         <logback.version>1.2.11</logback.version>
         <hamcrest.version>2.2</hamcrest.version>
+        <extended.reports.version>5.0.9</extended.reports.version>
     </properties>
 
 </project>
