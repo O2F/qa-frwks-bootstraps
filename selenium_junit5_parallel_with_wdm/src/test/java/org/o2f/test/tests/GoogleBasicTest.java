@@ -1,12 +1,8 @@
 package org.o2f.test.tests;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.o2f.pages.GoogleSearchPage;
-import org.o2f.test.BaseTestConfig;
 import org.o2f.test.TestBaseLifeCycle;
 
 @Slf4j
@@ -16,7 +12,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
 
     @Test
     void simpleGoogleTest() {
-        googleSearchPage = new GoogleSearchPage(driverThreadManager.getDriver());
+        googleSearchPage = new GoogleSearchPage(driverSimpleThreadManager.getDriver());
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
@@ -24,7 +20,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
 
     @Test
     void simpleGoogleTest2() {
-        googleSearchPage = new GoogleSearchPage(driverThreadManager.getDriver());
+        googleSearchPage = new GoogleSearchPage(driverSimpleThreadManager.getDriver());
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
@@ -32,7 +28,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
 
     @Test
     void simpleGoogleTest3() {
-        googleSearchPage = new GoogleSearchPage(driverThreadManager.getDriver());
+        googleSearchPage = new GoogleSearchPage(driverSimpleThreadManager.getDriver());
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");

@@ -18,17 +18,24 @@ public class DriverFactory {
     }
 
     public WebDriver createWebDriverInstance() {
-        if (this.browserName.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions ffOptions = new FirefoxOptions();
-            ffOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            driver = new FirefoxDriver(ffOptions);
-        } else if (this.browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            driver = new ChromeDriver(chromeOptions);
+
+        switch (this.browserName.toLowerCase()){
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                FirefoxOptions ffOptions = new FirefoxOptions();
+                ffOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                driver = new FirefoxDriver(ffOptions);
+                break;
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                driver = new ChromeDriver(chromeOptions);
+                break;
+            default:
+                throw new RuntimeException("Browser not supported for the automation");
         }
+
         return driver;
     }
 

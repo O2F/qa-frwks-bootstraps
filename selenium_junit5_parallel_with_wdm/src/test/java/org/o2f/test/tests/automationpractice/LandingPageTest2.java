@@ -3,7 +3,6 @@ package org.o2f.test.tests.automationpractice;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
 import org.o2f.pages.automationpractice.LandingPage;
 import org.o2f.pages.automationpractice.SearchResultPage;
 import org.o2f.test.TestBaseLifeCycle;
@@ -16,8 +15,8 @@ public class LandingPageTest2 extends TestBaseLifeCycle {
 
     @BeforeEach
     void setupSuite(){
-        landingPage = new LandingPage(driverThreadManager.getDriver());
-        searchResultPage = new SearchResultPage(driverThreadManager.getDriver());
+        landingPage = new LandingPage(driverSimpleThreadManager.getDriver());
+        searchResultPage = new SearchResultPage(driverSimpleThreadManager.getDriver());
         landingPage.navigateToAutomationPracticeHomePage(config.getBaseUrl());
         landingPage.isLoaded();
     }

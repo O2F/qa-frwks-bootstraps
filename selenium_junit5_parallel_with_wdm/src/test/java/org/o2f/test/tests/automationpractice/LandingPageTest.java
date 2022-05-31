@@ -14,8 +14,8 @@ public class LandingPageTest extends TestBaseLifeCycle {
 
     @BeforeEach
     void setupSuite(){
-        landingPage = new LandingPage(driverThreadManager.getDriver());
-        searchResultPage = new SearchResultPage(driverThreadManager.getDriver());
+        landingPage = new LandingPage(driverSimpleThreadManager.getDriver());
+        searchResultPage = new SearchResultPage(driverSimpleThreadManager.getDriver());
         landingPage.navigateToAutomationPracticeHomePage(config.getBaseUrl());
         landingPage.isLoaded();
     }

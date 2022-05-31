@@ -2,13 +2,13 @@ package org.o2f.configuration;
 
 import org.openqa.selenium.WebDriver;
 
-public class DriverThreadManager {
+public class DriverSimpleThreadManager {
 
     ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     String browserName;
 
-    public DriverThreadManager(String browserName){
+    public DriverSimpleThreadManager(String browserName){
         this.browserName = browserName;
     }
 

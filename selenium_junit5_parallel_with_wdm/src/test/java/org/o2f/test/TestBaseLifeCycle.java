@@ -5,14 +5,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.o2f.configuration.BaseConfigModel;
-import org.o2f.configuration.DriverFactory;
-import org.o2f.configuration.DriverThreadManager;
+import org.o2f.configuration.DriverSimpleThreadManager;
 
 @Slf4j
 public class TestBaseLifeCycle {
 
     public static BaseConfigModel config;
-    protected DriverThreadManager driverThreadManager;
+    protected DriverSimpleThreadManager driverSimpleThreadManager;
 
     @BeforeAll
     public static void baseSetup() {
@@ -26,13 +25,13 @@ public class TestBaseLifeCycle {
 
     @BeforeEach
     public void setup(){
-        driverThreadManager = new DriverThreadManager(config.getBrowser());
-        driverThreadManager.setDriver();
+        driverSimpleThreadManager = new DriverSimpleThreadManager(config.getBrowser());
+        driverSimpleThreadManager.setDriver();
     }
 
     @AfterEach
     public void teardown(){
-        driverThreadManager.getDriver().quit();
+        driverSimpleThreadManager.getDriver().quit();
     }
 
 
