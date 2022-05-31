@@ -1,13 +1,13 @@
-# Bootstrap JUnit5 - UI/E2E - Simple + WDM
+# Bootstrap JUnit5 - UI/E2E - Parallel + WDM
 
 ## Type:
 
 - **Basic Framework:** JUnit 5
 - **Secondary Framework:** ---
 - **Browsers:** WebDriver Manager downloaded
-- **Type of config file:** properties file
+- **Type of config file:** yaml file
 - **Remote runner possibility:** No
-- **Test Parallelization:** No
+- **Test Parallelization:** Yes
 - **CI/CD:** No
 
 ## Notes
