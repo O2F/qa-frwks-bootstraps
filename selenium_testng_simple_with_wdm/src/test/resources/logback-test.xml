@@ -39,4 +39,9 @@
         <appender-ref ref="STDOUT"/>
     </logger>
 
+    <!-- TestNG logging -->
+    <logger name="org.testng" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
 </configuration>
