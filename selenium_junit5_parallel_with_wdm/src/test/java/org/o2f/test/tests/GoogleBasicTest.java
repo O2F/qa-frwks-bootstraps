@@ -16,6 +16,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.validateFirstResultContainsSentence("Espera sempre só coisas boas");
     }
 
     @Test
@@ -24,6 +25,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.validateFirstResultContainsSentence("Espera sempre só coisas boas");
     }
 
     @Test
@@ -32,6 +34,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.validateFirstResultContainsSentence("Espera sempre só coisas boas");
     }
 
 }

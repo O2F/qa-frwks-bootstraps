@@ -15,7 +15,8 @@ public class GoogleBasicTest3 extends TestBaseLifeCycle {
         googleSearchPage = new GoogleSearchPage(driverSimpleThreadManager.getDriver());
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
-        googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.doSearch("Nebula Awards");
+        googleSearchPage.validateFirstResultContainsSentence("Nebula Award");
     }
 
     @Test
@@ -23,7 +24,8 @@ public class GoogleBasicTest3 extends TestBaseLifeCycle {
         googleSearchPage = new GoogleSearchPage(driverSimpleThreadManager.getDriver());
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
-        googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.doSearch("Hugo Awards");
+        googleSearchPage.validateFirstResultContainsSentence("Hugo Award");
     }
 
     @Test
@@ -32,6 +34,7 @@ public class GoogleBasicTest3 extends TestBaseLifeCycle {
         googleSearchPage.goToGoogle();
         googleSearchPage.acceptConditions();
         googleSearchPage.doSearch("Espera sempre só coisas boas");
+        googleSearchPage.validateFirstResultContainsSentence("Espera sempre só coisas boas");
     }
 
 }

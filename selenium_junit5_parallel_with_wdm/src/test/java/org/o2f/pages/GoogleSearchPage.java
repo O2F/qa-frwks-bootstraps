@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 import java.util.List;
 
 public class GoogleSearchPage extends BasePage{
@@ -17,6 +20,9 @@ public class GoogleSearchPage extends BasePage{
 
     @FindBy(id = "L2AGLb")
     private WebElement agreeBtn;
+
+    @FindBy(xpath = "//h3")
+    private List<WebElement> resultsLinks;
 
     public GoogleSearchPage(WebDriver driver) {
         super(driver);
@@ -33,5 +39,12 @@ public class GoogleSearchPage extends BasePage{
     public void doSearch(String text){
         inputText(searchBox,text);
         clickOnKey(searchBox,Keys.ENTER);
+    }
+
+    public void validateFirstResultContainsSentence(String sentence){
+        if (resultsLinks.size() > 0){
+            String text = resultsLinks.get(0).getText();
+            assertThat(text,containsString(sentence));
+        }
     }
 }
