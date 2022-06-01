@@ -1,26 +1,24 @@
-# Bootstrap JUnit5 - UI/E2E - Parallel + WDM
+# Bootstrap JUnit5 - UI/E2E - Simple + WDM
 
 ## Type:
 
-- **Basic Framework:** JUnit 5
+- **Basic Framework:** TestNG
 - **Secondary Framework:** ---
 - **Browsers:** WebDriver Manager downloaded
-- **Type of config file:** yaml file
+- **Type of config file:** properties file
 - **Remote runner possibility:** No
-- **Test Parallelization:** Yes
+- **Test Parallelization:** No
 - **CI/CD:** No
-- **Reporting:** Allure Report for JUnit 5
+- **Reporting:** Allure Report for TestNG
 
 ## Notes
 
 - Has the concept of **page components** that are used in **pages**
 - Has a configuration model that then creates a configuration - **BaseTestConfig**
-- This use YAML configuration instead of properties file configuration
-- This use the JUnit properties file and a custom strategy class, so it can run 
 
 ## How to run
 
-To run this project, at least we need to give it the environment (considering the remaining vars are in the properties files)
+To run this project, at least we need to give it the environment (considering the remaining vars are in the properties/yaml files)
 
 ```sh
 mvn clean test -Denv=<qa|preprod> allure:report
@@ -37,5 +35,3 @@ If you don't have properties/yaml configuration files or want to overwrite the v
 ```sh
 mvn clean test -Denv=<qa|preprod> -DbaseUrl=<base_url> -Dbrowser=<chrome|firefox> allure:report
 ```
-
-

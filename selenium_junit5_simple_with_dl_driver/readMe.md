@@ -9,6 +9,7 @@
 - **Remote runner possibility:** No
 - **Test Parallelization:** No
 - **CI/CD:** No
+- **Reporting:** Extended Reports
 
 ## Notes
 
@@ -33,3 +34,9 @@ The following parameters that can also be provided are (and must if not in the p
 `-Dbrowser`     :: The browser used to run the automation - only supporting chrome or firefox
 
 `-DreportPath`  :: The path for the expended reported to be added in
+
+If you don't have properties/yaml configuration files or want to overwrite the values in it:
+
+```sh
+mvn clean test -Denv=<qa|preprod> -DbaseUrl=<base_url> -Dbrowser=<chrome|firefox> -DreportPath=<report_path>
+```

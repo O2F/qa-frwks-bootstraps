@@ -12,7 +12,7 @@ public class GoogleBasicTest extends TestBaseLifeCycle {
     private static GoogleSearchPage googleSearchPage;
 
     @BeforeClass
-    static void testSuiteSetup() {
+    void testSuiteSetup() {
         googleSearchPage = new GoogleSearchPage(driver);
         googleSearchPage.goToGoogle();
     }

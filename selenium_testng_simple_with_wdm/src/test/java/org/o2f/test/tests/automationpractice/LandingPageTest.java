@@ -14,7 +14,7 @@ public class LandingPageTest extends TestBaseLifeCycle {
     private static SearchResultPage searchResultPage;
 
     @BeforeClass
-    static void suiteSetup() {
+    void suiteSetup() {
         landingPage = new LandingPage(driver);
         searchResultPage = new SearchResultPage(driver);
         landingPage.navigateToAutomationPracticeHomePage(config.getBaseUrl());

@@ -18,7 +18,7 @@ public class TestBaseLifeCycle {
     public static WebDriver driver;
 
     @BeforeSuite
-    public static void baseSetup() {
+    public void baseSetup() {
 
         //Unwrap config from the BaseTestConfig
         config = BaseTestConfig.getTestConfig();
@@ -30,7 +30,7 @@ public class TestBaseLifeCycle {
     }
 
     @AfterSuite
-    public static void tearDown() {
+    public void tearDown() {
         driver.quit();
     }
 
