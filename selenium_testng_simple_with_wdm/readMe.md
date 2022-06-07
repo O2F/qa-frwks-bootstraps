@@ -1,4 +1,4 @@
-# Bootstrap JUnit5 - UI/E2E - Simple + WDM
+# Bootstrap TestNG - UI/E2E - Simple + WDM
 
 ## Type:
 
