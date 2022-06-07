@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Regression" parallel="classes" thread-count="5">
+    <test name = "GoogleTestsSuite1">
+        <classes>
+            <class name = "org.o2f.test.tests.GoogleBasicTest"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest2"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest3"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest4"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest5"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest6"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest7"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest8"/>
+            <class name = "org.o2f.test.tests.GoogleBasicTest9"/>
+            <class name = "org.o2f.test.tests.automationpractice.LandingPageTest" />
+            <class name = "org.o2f.test.tests.automationpractice.LandingPageTest2" />
+        </classes>
+    </test>
+</suite>
