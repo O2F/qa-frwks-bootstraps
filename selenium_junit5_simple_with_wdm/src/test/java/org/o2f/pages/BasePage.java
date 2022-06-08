@@ -15,7 +15,7 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    private static final int TIMEOUT = 10;
+    private static final int TIMEOUT = 20;
     private static final Duration POLLING = Duration.ofMillis(250);
 
     public BasePage(WebDriver driver) {
