@@ -41,4 +41,5 @@ jobs:
     - name: Test with pytest
       run: |
         cd playwright-python-ui
-        pytest /tests/test_demo.py
+        pwd
+        pytest tests/test_demo.py
