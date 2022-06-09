@@ -32,9 +32,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
-        cd ..
-        pwd
-        pip install -e /qa-frwks-bootstraps/playwright-python-ui
+        #pip install -e /qa-frwks-bootstraps/playwright-python-ui
     - name: Ensure browsers are installed
       run: |
         cd playwright-python-ui
