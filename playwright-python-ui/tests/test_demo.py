@@ -45,15 +45,15 @@ def test_locked_user_login(login_page):
     login_page.validate_error_message_equals("Epic sadface: Sorry, this user has been locked out.")
 
 
-# def test_three(login_page):
-#     user = User("problem_user", "secret_sauce")
-#     login_page.goto_login_page()
-#     login_page.is_loaded()
-#     login_page.do_login_with(user)
-#
-#
-# def test_four(login_page):
-#     user = User("performance_glitch_user", "secret_sauce")
-#     login_page.goto_login_page()
-#     login_page.is_loaded()
-#     login_page.do_login_with(user)
+def test_problem_user(login_page):
+    user = User("problem_user", "secret_sauce")
+    login_page.goto_login_page()
+    login_page.is_loaded()
+    login_page.do_login_with(user)
+
+
+def test_performance_user(login_page):
+    user = User("performance_glitch_user", "secret_sauce")
+    login_page.goto_login_page()
+    login_page.is_loaded()
+    login_page.do_login_with(user)
