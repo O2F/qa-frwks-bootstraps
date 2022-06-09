@@ -28,6 +28,7 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
+        cd playwright-python-ui
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
