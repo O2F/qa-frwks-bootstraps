@@ -4,3 +4,4 @@ playwright
 pytest-playwright
 pytest-parallel
 pytest-html
+flake8
