@@ -32,6 +32,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
+        cd ..
+        pwd
+        pip install -e ../playwright-python-ui
+    - name: Ensure browsers are installed
+      run: |
+        cd playwright-python-ui
+        python -m playwright install --with-deps
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
