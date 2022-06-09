@@ -9,6 +9,8 @@ env:
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - playwright-python-ui/**
   pull_request:
     branches: [ "main" ]
 
