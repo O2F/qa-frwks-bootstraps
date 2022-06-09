@@ -34,7 +34,7 @@ jobs:
         if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
         cd ..
         pwd
-        pip install -e /qa-frwks-bootstraps/qa-frwks-bootstraps
+        pip install -e /qa-frwks-bootstraps/playwright-python-ui
     - name: Ensure browsers are installed
       run: |
         cd playwright-python-ui
