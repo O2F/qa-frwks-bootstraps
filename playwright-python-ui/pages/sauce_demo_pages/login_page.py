@@ -4,7 +4,7 @@ from model.user import User
 
 class LoginPage:
 
-    _logo=".login_logo"
+    _logo = ".login_logo"
     _username_selector = "#user-name"
     _password_selector = "#password"
     _login_button_selector = "#login-button"

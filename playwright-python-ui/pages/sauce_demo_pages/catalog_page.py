@@ -1,6 +1,7 @@
 from playwright.sync_api import Page, expect
 import logging
 
+
 class CatalogPage:
 
     _title = ".title"

@@ -11,4 +11,3 @@ class Configuration:
             }
 
     ignore_https_errors = False
-

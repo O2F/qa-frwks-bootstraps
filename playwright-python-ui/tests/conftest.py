@@ -1,4 +1,4 @@
-import logging
+# import logging
 import os
 import pytest
 from datetime import datetime
@@ -15,9 +15,10 @@ def browser_context_args(browser_context_args):
             "viewport": Configuration.view_port,
             "ignore_https_errors": Configuration.ignore_https_errors
         }
-        a = logging.getLogger("a")
-        a.error(args)
+        #        a = logging.getLogger("a")
+        #        a.error(args)
         return args
+
 
 # report filename renaming
 @pytest.hookimpl(tryfirst=True)
