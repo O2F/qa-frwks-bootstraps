@@ -37,6 +37,14 @@ jobs:
       run: |
         cd playwright-python-ui
         python -m playwright install --with-deps
+    - name: Load Secrets
+      env:
+        DYNCONF_SECRETS: ${{ secrets.PLAYWRITGHT_UI_DOT_ENV }}
+      run: |
+        echo "loading secrets to .secrets.yaml"
+        touch .secrets.yaml
+        echo aws_host="$DYNCONF_SECRETS" >> .secrets.yaml
+        cat .secrets.yaml
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
