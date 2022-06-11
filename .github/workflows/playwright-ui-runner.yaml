@@ -5,6 +5,9 @@ name: Playwright Python UI testing
 
 env:
   REQUIREMENTS_FILENAME: requirements-test.txt
+  #DYNACONF_PASSWORDS.VALID_USER: ${{ secrets.DYNACONF_PASSWORDS_VALID_USER }}
+  #DYNACONF_PASSWORDS.INVALID_USER: ${{ secrets.DYNACONF_PASSWORDS_INVALID_USER }}
+  #DYNACONF_PASSWORDS.LOCKED_USER: ${{ secrets.DYNACONF_PASSWORDS_LOCKED_USER }}
 
 on:
   push:
@@ -37,14 +40,12 @@ jobs:
       run: |
         cd playwright-python-ui
         python -m playwright install --with-deps
-    - name: Load Secrets
-      env:
-        DYNCONF_SECRETS: ${{ secrets.PLAYWRITGHT_UI_DOT_ENV }}
+    - name: Download .secrets.yaml
       run: |
-        echo "loading secrets to .secrets.yaml"
-        touch .secrets.yaml
-        echo aws_host="$DYNCONF_SECRETS" >> .secrets.yaml
-        cat .secrets.yaml
+        echo "Downloading .secrect.yaml"
+        echo "!! YOU SHOULD NEVER DO THIS UNLESS FROM A HIGHLY SECURE LOCATION !!"
+        echo "!! ALSO NEVER FORGET TO CLEANUP !!"
+        curl -iL "https://www.dropbox.com/s/nkewf082qgjuxlb/.secrets.yaml?dl=1" |grep -A 100 "qa" >> .secrets.yaml
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -57,3 +58,8 @@ jobs:
         cd playwright-python-ui
         pwd
         pytest tests/test_demo.py
+
+    - name: Delete .secrets.yaml
+      run: |
+        echo "Clean up!"
+        rm -rf .secrets.yaml
