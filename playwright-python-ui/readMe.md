@@ -3,12 +3,12 @@
 ## Type:
 
 - **Basic Framework:** Pytest
-- **Secondary Framework:** ---
+- **Secondary Framework:** Playwright
 - **Browsers:** Playwright - needs to install/update 
 - **Type of config file:** pytest.ini file
 - **Remote runner possibility:** No
 - **Test Parallelization:** Yes
-- **CI/CD:** No
+- **CI/CD:** Yes
 - **Reporting:** pytest html report
 
 ## Dependencies
@@ -44,8 +44,7 @@ example of pytest.ini:
 
 ```ini
 [pytest]
-addopts = --headed --browser chromium --tests-per-worker 4  --html=target/reports/report.html --browser firefox --browser webkit
-#--workers auto
+addopts = --headed --browser chromium --workers 4  --html=target/reports/report.html --browser firefox --browser webkit
 
 log_cli = 1
 log_cli_level = INFO

@@ -5,6 +5,8 @@ from pages.sauce_demo_pages.catalog_page import CatalogPage
 from pages.sauce_demo_pages.login_page import LoginPage
 from playwright.sync_api import Page
 
+from dynconfig import settings
+
 
 @pytest.fixture
 def login_page(page: Page):
@@ -19,7 +21,7 @@ def catalog_page(page: Page):
 
 
 def test_valid_user_login(login_page, catalog_page):
-    valid_user = User("standard_user", "secret_sauce")
+    valid_user = User(settings.users.valid_user, settings.passwords.valid_user)
     login_page.goto_login_page()
     login_page.is_loaded()
     login_page.do_login_with(valid_user)
@@ -30,7 +32,7 @@ def test_valid_user_login(login_page, catalog_page):
 
 
 def test_invalid_user_login(login_page):
-    user = User("invalid_user", "secret_sauce")
+    user = User(settings.users.invalid_user, settings.passwords.invalid_user)
     login_page.goto_login_page()
     login_page.is_loaded()
     login_page.do_login_with(user)
@@ -38,7 +40,7 @@ def test_invalid_user_login(login_page):
 
 
 def test_locked_user_login(login_page):
-    user = User("locked_out_user", "secret_sauce")
+    user = User(settings.users.locked_user, settings.passwords.locked_user)
     login_page.goto_login_page()
     login_page.is_loaded()
     login_page.do_login_with(user)

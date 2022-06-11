@@ -1,0 +1,14 @@
+
+from dynaconf import Dynaconf
+
+settings = Dynaconf(
+    envvar_prefix="DYNACONF",
+    settings_files=['settings.yaml', '.secrets.yaml'],
+    # To add multiple environments
+    environments=True,
+    # support for .env files
+    load_dotenv=False
+)
+
+# `envvar_prefix` = export envvars with `export DYNACONF_FOO=bar`.
+# `settings_files` = Load these files in the order.

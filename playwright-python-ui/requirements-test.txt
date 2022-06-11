@@ -1,7 +1,12 @@
-# Project Requirements
+############################
+### Project Dependencies ###
+############################
+
 pytest
-playwright
 pytest-playwright
 pytest-parallel
 pytest-html
+playwright
+PyYAML
+dynaconf
 flake8
