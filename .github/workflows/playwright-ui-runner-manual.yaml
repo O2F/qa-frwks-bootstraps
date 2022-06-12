@@ -1,0 +1,66 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Playwright Python UI testing - Manual
+
+env:
+  REQUIREMENTS_FILENAME: requirements-test.txt
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'env'
+        required: true
+        default: 'qa'
+      secrets_url:
+        description: 'secrets url'
+        required: true
+        default: 'https://<private_file_server>/.secrets.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  test_job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        cd playwright-python-ui
+        python -m pip install --upgrade pip
+        if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
+    - name: Ensure browsers are installed
+      run: |
+        cd playwright-python-ui
+        python -m playwright install --with-deps
+    - name: Download .secrets.yaml
+      run: |
+        echo "Downloading .secrect.yaml"
+        echo "!! YOU SHOULD NEVER DO THIS UNLESS FROM A HIGHLY SECURE LOCATION !!"
+        echo "!! ALSO NEVER FORGET TO CLEANUP !!"
+        curl -iL "${{ github.event.inputs.secrets_url }}" |grep -A 100 "qa" >> .secrets.yaml
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test with pytest
+      run: |
+        cd playwright-python-ui
+        pwd
+        pytest tests/test_demo.py --env=${{ github.event.inputs.environment }}
+
+    - name: Delete .secrets.yaml
+      run: |
+        echo "Clean up!"
+        rm -rf .secrets.yaml
