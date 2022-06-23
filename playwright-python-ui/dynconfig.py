@@ -7,7 +7,7 @@ settings = Dynaconf(
     # To add multiple environments
     environments=True,
     # support for .env files
-    load_dotenv=True
+    #load_dotenv=True
 )
 
 # `envvar_prefix` = export envvars with `export DYNACONF_FOO=bar`.
