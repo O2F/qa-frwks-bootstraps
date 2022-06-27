@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Playwright Python UI testing
+name: Python Requests API testing
 
 env:
   REQUIREMENTS_FILENAME: requirements.txt
@@ -10,7 +10,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - playwright-request-api/**
+      - python-request-api/**
   pull_request:
     branches: [ "main" ]
 
@@ -33,6 +33,13 @@ jobs:
         cd python-request-api
         python -m pip install --upgrade pip
         if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - name: Add json-server dependency
+      run: |
+        npm install -g json-server
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -42,4 +49,5 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest
+        cd python-request-api
+        sh tests_runner.sh
