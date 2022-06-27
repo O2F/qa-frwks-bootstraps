@@ -73,3 +73,6 @@ pytest --headed --browser chromium --tests-per-worker 4  --html=report.html --br
 - Using tests-per-worker or workers doesn't mess up with the html reporting
 - **log_cli_*** - these options are needed to provide logging in the CLI
 
+## Notes
+
+If the file `.secrets.yaml` doesn't exist create it as is part of dynaconf and can be used to add local data

@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The book of testing",
+      "isbn": "123456789"
+    },
+    {
+      "id": "2",
+      "title": "Lets talk about testing",
+      "isbn": "123456788"
+    },
+    {
+      "id": "3",
+      "title": "The book of testing 2A",
+      "isbn": "123456790"
+    },
+    {
+      "id": "4",
+      "title": "The book of testing 3",
+      "isbn": "123456791"
+    }
+  ]
+}

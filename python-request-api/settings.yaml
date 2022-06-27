@@ -1,0 +1,8 @@
+qa:
+  base_url: "http://localhost:3000"
+  report_opts:
+    path: "target/qa/reports/"
+preprod:
+  base_url: "http://localhost:3001"
+  report_opts:
+    path: "target/preprod/reports/"

@@ -1,0 +1,19 @@
+############################
+### Project Dependencies ###
+############################
+
+pytest
+pytest-html
+requests
+PyYAML
+pytest-xdist
+pytest-xdist[psutil]
+
+## Configuration Manager ##
+dynaconf
+
+## Linter ##
+flake8
+
+## Schema validation ##
+marshmallow
