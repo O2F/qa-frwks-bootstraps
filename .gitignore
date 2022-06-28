@@ -6,7 +6,8 @@ target/
 allure-results/
 .pytest_cache/
 venv/
-**/__pycache__/
+__pycache__/
+*.pyc
 
 # Ignore dynaconf secret files
 .secrets.*
