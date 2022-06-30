@@ -12,7 +12,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - ${{ env.PROJECT_NAME }}/**
+      - ${{env.PROJECT_NAME}}/**
   pull_request:
     branches: [ "main" ]
 
@@ -41,13 +41,13 @@ jobs:
           npm install -g json-server
       - name: Start Mock Server
         run: |
-          cd ${{ env.PROJECT_NAME }}
+          cd ${{env.PROJECT_NAME}}
           sh mock_server_start.sh
       - name: Run Tests
         run: |
-          cd ${{ env.PROJECT_NAME }}
+          cd ${{env.PROJECT_NAME}}
           mvn clean test
       - name: Stop Mock Server
         run: |
-          cd ${{ env.PROJECT_NAME }}
+          cd ${{env.PROJECT_NAME}}
           sh mock_server_stop.sh
