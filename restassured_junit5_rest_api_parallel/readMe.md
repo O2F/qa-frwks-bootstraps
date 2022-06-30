@@ -15,7 +15,7 @@
 The default environment set is `qa` if more yaml with configurations are added use the following command.
 
 ```sh
-mvn clean test -Denv=<qa|preprod> allure:report
+mvn clean test -Denv=<environment> allure:report
 ```
 
 The following parameters that can also be provided are (and must if not in the properties file):
