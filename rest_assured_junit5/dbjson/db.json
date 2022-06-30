@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The book of testing",
+      "isbn": "123456789"
+    },
+    {
+      "id": "2",
+      "title": "Lets talk about testing",
+      "isbn": "123456785"
+    },
+    {
+      "id": "6",
+      "title": "Test this not that",
+      "isbn": "987654321"
+    },
+    {
+      "id": "1001",
+      "title": "Don't test this way",
+      "isbn": "98765432100"
+    },
+    {
+      "id": "1000",
+      "title": "Test the other way around",
+      "isbn": "9876543210"
+    }
+  ]
+}

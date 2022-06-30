@@ -1,0 +1,14 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The book of testing",
+      "isbn": "123456789"
+    },
+    {
+      "id": "2",
+      "title": "Lets talk about testing",
+      "isbn": "123456785"
+    }
+  ]
+}
