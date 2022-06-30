@@ -6,7 +6,7 @@
 - **Secondary Framework:** RestAssured
 - **Type of config file:** yaml file
 - **Test Parallelization:** Yes
-- **CI/CD:** YEs
+- **CI/CD:** Yes
 - **Reporting:** Allure Reports
 
 
@@ -15,7 +15,7 @@
 The default environment set is `qa` if more yaml with configurations are added use the following command.
 
 ```sh
-mvn clean test -Denv=<environment> allure:report
+mvn clean test -Denv=<env> allure:report
 ```
 
 The following parameters that can also be provided are (and must if not in the properties file):

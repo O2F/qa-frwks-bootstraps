@@ -12,7 +12,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - ${{env.PROJECT_NAME}}/**
+      - restassured_junit5_rest_api_parallel/**
   pull_request:
     branches: [ "main" ]
 
