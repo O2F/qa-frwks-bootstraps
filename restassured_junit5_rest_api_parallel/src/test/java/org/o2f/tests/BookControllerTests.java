@@ -114,7 +114,7 @@ public class BookControllerTests extends CommonTestLifeCycle {
 
     @Test
     @DisplayName("Test is not possible to create twice the same book")
-    void createBookTwiceTest() {
+    void createBookTwiceTest() throws InterruptedException {
         log.debug(Thread.currentThread().getName());
 
         BookModel book = BookModel
@@ -131,6 +131,9 @@ public class BookControllerTests extends CommonTestLifeCycle {
                 .then()
                     .statusCode(201);
 
+        // Due to a docker refresh problem
+        Thread.sleep(250);
+
         // Try to add the book the 2nd time
         RequestSpec
                 .bookRequestSpec(book)
@@ -141,7 +144,7 @@ public class BookControllerTests extends CommonTestLifeCycle {
 
     @Test
     @DisplayName("Test is possible to edit the same book")
-    void editBookTest() {
+    void editBookTest() throws InterruptedException {
         log.debug(Thread.currentThread().getName());
 
         BookModel book = BookModel
@@ -160,6 +163,9 @@ public class BookControllerTests extends CommonTestLifeCycle {
         book.toBuilder()
                 .title("Do tests as the book states")
                 .build();
+
+        // Due to a docker refresh problem
+        Thread.sleep(250);
 
         RequestSpec
                 .bookRequestSpec(book)

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>rest_assured_junit5</artifactId>
+    <artifactId>restassured_junit5_rest_api_parallel</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
