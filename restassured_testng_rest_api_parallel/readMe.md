@@ -29,3 +29,4 @@ If you don't have properties/yaml configuration files or want to overwrite the v
 ```sh
 mvn clean test -Denv=<qa|preprod> -DbaseUrl=<base_url> -Dport=<port> allure:report
 ```
+
