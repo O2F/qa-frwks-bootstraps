@@ -1,0 +1,4 @@
+qa:
+  base_url: "https://countries.trevorblades.com/graphql"
+  report_opts:
+    path: "target/qa/reports/"

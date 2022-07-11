@@ -1,0 +1,18 @@
+############################
+### Project Dependencies ###
+############################
+
+pytest
+pytest-html
+requests
+PyYAML
+pytest-xdist
+pytest-xdist[psutil]
+jsonpath-ng
+jsonpath-rw-ext
+
+## Configuration Manager ##
+dynaconf
+
+## Linter ##
+flake8
