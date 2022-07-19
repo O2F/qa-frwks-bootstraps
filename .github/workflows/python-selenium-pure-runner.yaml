@@ -1,0 +1,49 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python Selenium Pure testing
+
+env:
+  REQUIREMENTS_FILENAME: requirements.txt
+  PROJECT_NAME: python-selenium-pure
+
+  PYTHON_VERSION: "3.10"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - python-selenium-pure/**
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test_job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{env.PYTHON_VERSION}}
+    - name: Install dependencies
+      run: |
+        cd ${{env.PROJECT_NAME}}
+        python -m pip install --upgrade pip
+        if [ -f ${{env.REQUIREMENTS_FILENAME}} ]; then pip install -r ${{env.REQUIREMENTS_FILENAME}}; fi
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test with pytest
+      run: |
+        cd ${{env.PROJECT_NAME}}
+        pytest tests

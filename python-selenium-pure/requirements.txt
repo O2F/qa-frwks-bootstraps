@@ -1,0 +1,10 @@
+webdriver-manager
+pytest
+pytest-html
+pytest-xdist
+pytest-xdist[psutil]
+selenium
+flake8
+
+#Configuration manager
+dynaconf

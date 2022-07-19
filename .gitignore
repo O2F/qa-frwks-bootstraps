@@ -12,3 +12,7 @@ __pycache__/
 # Ignore dynaconf secret files
 .secrets.*
 .env
+
+*.log
+chromedriver**
+geckodriver
