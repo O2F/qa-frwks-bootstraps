@@ -50,6 +50,4 @@ pytest tests
 
 ## Notes
 
-To reuse remove the directory `dbjson` as it only serves for mocking.
-
 If the file `.secrets.yaml` doesn't exist create it as is part of dynaconf and can be used to add local data

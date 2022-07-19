@@ -10,3 +10,5 @@ browser_configs:
   pooling_time: 0.5
   headless: True
   browser_binary_cache: 10
+
+ci_distinct_folder: "runner"
