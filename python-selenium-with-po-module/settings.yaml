@@ -1,0 +1,14 @@
+base_url: "http://automationpractice.com/index.php"
+google_base_url: "https://www.google.com"
+browsers:
+  - "chrome"
+  #- "firefox"
+
+browser_configs:
+  explicit_timeout: 30.0
+  # https://stackoverflow.com/questions/44645586/selenium-webdriver-polling-time
+  pooling_time: 0.5
+  headless: False
+  browser_binary_cache: 10
+
+ci_distinct_folder: "runner"
