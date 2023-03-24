@@ -1,6 +1,7 @@
 *** Setting ***
 Documentation     Setting metadata for test suite directory
 Suite Setup  Open The Browser Window
+Suite Teardown  Close Browser window
 
 # --// LIBS AND RESOURCES //--
 
@@ -13,3 +14,6 @@ Library     BuiltIn
 
 Open The Browser Window
     Open Browser   browser=chrome  executable_path=${EXECDIR}/driver/chromedriver
+
+Close Browser window
+    Close Browser

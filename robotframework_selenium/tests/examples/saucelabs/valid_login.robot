@@ -1,7 +1,7 @@
 *** Settings ***
 
-Resource    ../keywords/pageobjects/login_page.robot
-Resource    ../keywords/pageobjects/catalog_page.robot
+Resource    ../../../keywords/pageobjects/examples/saucelabs/login_page.robot
+Resource    ../../../keywords/pageobjects/examples/saucelabs/catalog_page.robot
 
 *** Test Cases ***
 

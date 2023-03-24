@@ -2,7 +2,7 @@
 
 Test Template  Validate Messages For Login With Invalid Credentials
 
-Resource    ../keywords/pageobjects/login_page.robot
+Resource    ../../../keywords/pageobjects/examples/saucelabs/login_page.robot
 
 *** Test Cases ***        user                    pass            expected_msg
 Invalid user              Notexists               secret_sauce    Epic sadface: Username and password do not match any user in this service

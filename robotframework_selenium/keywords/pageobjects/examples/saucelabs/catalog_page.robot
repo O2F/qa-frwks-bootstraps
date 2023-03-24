@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource  page.robot
+Resource  ../../page.robot
 
 *** Variables ***
 

@@ -3,11 +3,39 @@ Library     SeleniumLibrary
 
 *** Keywords ***
 
+Click On Element Number Of Element List
+    [Documentation]  Keyword responsible for the function of clicking on an element and waiting for the element to be visible.
+    [Arguments]  ${locator}  ${element_number} 
+    SeleniumLibrary.Wait Until Element Is Visible    ${locator}
+    ${count}=  SeleniumLibrary.Get Element Count    ${locator}
+    Log To Console    Elements: ${count}
+    IF    ${count} < ${element_number}
+        Log To Console    \nelement number is greater than the available elements
+        Fail
+    END
+    @{elements}=  SeleniumLibrary.Get WebElements    ${locator}
+    SeleniumLibrary.Click Element    ${elements}[${element_number}]
+    
+
 Click On Element
     [Documentation]  Keyword responsible for the function of clicking on an element and waiting for the element to be visible.
-    [Arguments]  ${locator}
+    [Arguments]  ${locator}   
     SeleniumLibrary.Wait Until Element Is Visible    ${locator}
     SeleniumLibrary.Click Element    ${locator}
+
+Select Value From Dropbox
+    [Arguments]  ${locator}  ${value}
+    Select From List By Value    ${locator}  ${value}
+
+Select Text From Dropbox
+    [Arguments]  ${locator}  ${text}
+    Select From List By Label    ${locator}  ${text}
+
+Validate Element Text
+    [Arguments]  ${locator}  ${expected_text}
+    SeleniumLibrary.Wait Until Element Is Visible    ${locator}
+    ${text}=  SeleniumLibrary.Get Text    ${locator}
+    Should Be Equal As Strings    ${text}    ${expected_text}
 
 Go To Page
     [Documentation]  Keyword responsible for opening the specific URL for each type of platform.
@@ -17,7 +45,7 @@ Go To Page
 Type Text On Field
     [Documentation]  Keyword responsible for insert a text on a field
     [Arguments]  ${locator}  ${text}
-
+    SeleniumLibrary.Wait Until Element Is Visible    ${locator}
     Click On Element  ${locator}
     SeleniumLibrary.Input Text    ${locator}    ${text}
 
@@ -32,6 +60,7 @@ Webelement Should Be Visible
     [Arguments]  ${locator}
     
     ${is_element_visible}=  SeleniumLibrary.Wait Until Element Is Visible    ${locator}
+    [Return]  ${is_element_visible}
     
 Webelement Should Not Be Visible
     [Documentation]  This keyword returns true if the expected element is not visible

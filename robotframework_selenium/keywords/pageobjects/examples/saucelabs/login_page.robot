@@ -1,5 +1,5 @@
 *** Settings ***
-Resource  page.robot
+Resource  ../../page.robot
 
 *** Variables ***
 ${login_url}  https://www.saucedemo.com/
