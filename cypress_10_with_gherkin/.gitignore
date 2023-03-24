@@ -50,3 +50,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Cypress reports
+/cypress/reports
+
