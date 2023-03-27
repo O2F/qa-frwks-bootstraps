@@ -4,7 +4,6 @@
 import {
     Given,
     When,
-    And,
     Then,
   } from "@badeball/cypress-cucumber-preprocessor";
 
@@ -28,7 +27,7 @@ Then("a second window is displayed", () => {
             .should("be.called")
 })
 
-And("The message {string} is displayed", (stmt) =>{
+Then("The message {string} is displayed", (stmt) =>{
     cy.get('h1')
             .should('have.text', stmt)
 })
